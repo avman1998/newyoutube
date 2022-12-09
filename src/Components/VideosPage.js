@@ -22,17 +22,19 @@ export default function VideosPage() {
 
   function onhandleSearch(e) {
     e.preventDefault();
-    fetch(
-      `https://youtube-v31.p.rapidapi.com/search?q=${query}&part=snippet%2Cid&regionCode=US&maxResults=48&order=date`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        console.log(response.items);
-        setVideos(response?.items);
-      })
-      .catch((err) => console.error(err));
+    if (query) {
+      fetch(
+        `https://youtube-v31.p.rapidapi.com/search?q=${query}&part=snippet%2Cid&regionCode=US&maxResults=48&order=date`,
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          console.log(response);
+          console.log(response.items);
+          setVideos(response?.items);
+        })
+        .catch((err) => console.error(err));
+    }
   }
   console.log(videos);
   console.log(`query search-${querySearch}`);
