@@ -6,7 +6,6 @@ export default function VideoPlayer() {
   const style = {
     borderRadius: "25px",
     border: "2px solid white",
-    width: "100%",
     width: "fit-content",
   };
   return (
