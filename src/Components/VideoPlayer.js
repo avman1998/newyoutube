@@ -5,7 +5,9 @@ import { clickId } from "./VideosPage";
 export default function VideoPlayer() {
   const style = {
     borderRadius: "25px",
+    border: "2px solid white",
     width: "100%",
+    width: "fit-content",
   };
   return (
     <div className=" flex justify-center items-center p-[10px] ">
@@ -17,7 +19,7 @@ export default function VideoPlayer() {
           volume={1}
           playing={true}
           style={style}
-          width="500px"
+          width="100%"
         />
       )}
     </div>

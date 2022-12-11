@@ -41,25 +41,30 @@ export default function VideosPage() {
   videosArr = [...videos];
   clickId = clickIndex;
   return (
-    <div className=" flex flex-col justify-center ">
-      <form className="flex md:flex-row flex-col p-[5px] justify-center gap-[15px] max-w-[100vw]">
-        <input
-          placeholder="Search here"
-          value={query}
-          onChange={(e) => SetQuery(e.target.value)}
-          className="bg-black border-2 rounded text-[60%] py-[5px] px-[10px]"
-        />
-        <button
-          className="text-[50%] py-[5px] px-[10px] font-semibold bg-white rounded text-black"
-          onClick={(e) => onhandleSearch(e)}
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
-      {videos.length !== 0 && <VideoPlayer />}
+    <div className=" relative flex flex-col justify-center ">
+      <div className="z-10 fixed top-0 left-0 right-0 bg-textColor  ">
+        <nav className=" z-10  text-center  bg-white text-[90%] py-[20px] bg-textColor text-bgApp font-bold">
+          Cool - TV 📺
+        </nav>
+        <form className="z-10 flex md:flex-row flex-col p-[5px] justify-center gap-[15px] max-w-[100vw]">
+          <input
+            placeholder="Search here"
+            value={query}
+            onChange={(e) => SetQuery(e.target.value)}
+            className="bg-black border-2 border-bgApp rounded text-[50%] py-[15px] px-[5px] transparent "
+          />
+          <button
+            className="text-[70%] py-[15px] px-[10px] font-semibold bg-bgApp text-textColor rounded"
+            onClick={(e) => onhandleSearch(e)}
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
+        {videos.length !== 0 && <VideoPlayer />}
+      </div>
 
-      <div className="flex flex-col items-baseline md:flex-row flex-wrap justify-between   min-w-full ">
+      <div className=" z-0 absolute top-[500px] flex flex-col items-baseline md:flex-row flex-wrap justify-between   min-w-full mt-[10px] text-gray-100 font-semibold bg-white">
         {videos?.map((video, index) => {
           return (
             <VideoCard
