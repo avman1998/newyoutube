@@ -46,12 +46,12 @@ export default function VideosPage() {
         <nav className=" z-10  text-center  bg-white text-[90%] py-[20px] bg-textColor text-bgApp font-bold">
           Cool - TV 📺
         </nav>
-        <form className="z-10 flex md:flex-row flex-col p-[5px] justify-center gap-[15px] max-w-[100vw]">
+        <form className="z-10 flex md:flex-row flex-col p-[5px] mx-[5px] justify-center gap-[15px] max-w-[100vw]">
           <input
             placeholder="Search here"
             value={query}
             onChange={(e) => SetQuery(e.target.value)}
-            className="bg-black border-2 border-bgApp rounded text-[50%] py-[15px] px-[5px] transparent "
+            className="bg-black border-2 border-bgApp rounded text-[50%] py-[15px] px-[5px] transparent w-full"
           />
           <button
             className="text-[70%] py-[15px] px-[10px] font-semibold bg-bgApp text-textColor rounded"
